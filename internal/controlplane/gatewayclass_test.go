@@ -45,7 +45,7 @@ func TestGatewayClassReconcile(t *testing.T) {
 	v1.Install(scheme)
 
 	// TODO: right now we are hardcoding kubernetes version to latest, and "stable" GW API channel
-	// we can make it configuratble further for other tests
+	// we can make it configurable further for other tests
 	envtest, restconfig, err := framework.StartEnvTest(scheme, "", "")
 	require.NoError(t, err)
 
