@@ -67,7 +67,7 @@ var orphan = &gatewayv1.Gateway{
 	},
 }
 
-// gateway with non-existent gateway class
+// gateway with nonexistent gateway class
 var noClass = &gatewayv1.Gateway{
 	ObjectMeta: metav1.ObjectMeta{
 		Name:      "ingate-no-class",
@@ -133,8 +133,8 @@ func Test_Gateway_Reconciler(t *testing.T) {
 		require.Equal(t, ctrl.Result{}, result)
 	})
 
-	// gateway with non-existent gateway class
-	t.Run("gateway with non-existent gateway class", func(t *testing.T) {
+	// gateway with nonexistent gateway class
+	t.Run("gateway with nonexistent gateway class", func(t *testing.T) {
 		result, err := r.Reconcile(context.Background(), ctrl.Request{
 			NamespacedName: client.ObjectKey{
 				Name:      "ingate-no-class",
@@ -150,7 +150,7 @@ func Test_Gateway_Reconciler(t *testing.T) {
 	t.Run("gateway not owned by InGate", func(t *testing.T) {
 		result, err := r.Reconcile(context.Background(), ctrl.Request{
 			NamespacedName: client.ObjectKey{
-				Name:      "ingate-non-existent",
+				Name:      "ingate-nonexistent",
 				Namespace: "default",
 			},
 		})
